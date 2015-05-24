@@ -107,3 +107,60 @@ let arrays = ["a","b","c","d"]
 for i in 0..<arrays.count {
   println("第\(i+1)个值:\(arrays[i])")
 }
+
+/**
+ **  ?? 选并操作符
+ **/
+let ifa:String?
+let ifb = "a为nil则选b"
+println(ifa ?? ifb)
+
+/**
+ **  字符串判断及Unicode编码
+ **/
+var u_66 = "\u{11123}\u{11123}\u{11123}\u{11123}"
+if u_66.isEmpty
+{
+    println("is empty")
+}else{
+    println("is not empty")
+}
+
+for char in u_66 {
+  println(char)
+}
+//计算字符串的长度
+countElements(u_66)
+
+//字符串比较 前缀 后缀
+if u_66.hasPrefix("\u{11123}")
+{
+    println("前缀存在。。。")
+}
+
+if(u_66.hasSuffix("\u{11123}")){
+println("后缀存在。。。")
+}
+
+/**
+**  字符串编码转换 (默认为Unicode)
+**/
+let codeStr = "钓鱼岛是中国的 \u{1F496}"
+
+//2的8次方，不会超过255
+for c in codeStr.utf8{
+    print("\(c) ")
+}
+
+//2的16次方，不会超过65535
+println("\n以下是utf16编码")
+for c1 in codeStr.utf16{
+    print("\(c1) ")
+}
+
+//2的32次方
+println("\n以下是Unicode(utf32)编码")
+for c1 in codeStr.unicodeScalars{
+    print("\(c1.value) ")
+}
+
