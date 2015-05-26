@@ -164,3 +164,16 @@ for c1 in codeStr.unicodeScalars{
     print("\(c1.value) ")
 }
 
+/**
+ ** collection type 集合类型
+ **/
+var cars22 = ["a","b"]
+cars22.append("cc")
+cars22 += ["c"]
+cars22[0] = "aa"
+cars22[1...2] = ["bb","cc"]
+cars22.insert("ddd", atIndex: 1)
+for (i,v) in enumerate(cars22)
+{
+    println("v:\(v) | i:\(i)")
+}
